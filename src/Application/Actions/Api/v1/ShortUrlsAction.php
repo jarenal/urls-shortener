@@ -11,6 +11,7 @@ class ShortUrlsAction extends Action
 {
     protected function action(): ResponseInterface
     {
-        return $this->respondWithData(['url' => $shortUrl]);
+        $parsedBody = $this->request->getParsedBody();
+        return $this->respondWithData(['url' => $parsedBody['url']]);
     }
 }
