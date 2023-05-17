@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use App\Application\Handlers\HttpErrorHandler;
 use App\Application\Handlers\ShutdownHandler;
+use App\Application\Middleware\CustomJsonMiddleware;
 use App\Application\ResponseEmitter\ResponseEmitter;
 use App\Application\Settings\SettingsInterface;
 use DI\ContainerBuilder;
@@ -68,6 +69,8 @@ register_shutdown_function($shutdownHandler);
 
 // Add Routing Middleware
 $app->addRoutingMiddleware();
+
+$app->add(new CustomJsonMiddleware());
 
 // Add Body Parsing Middleware
 $app->addBodyParsingMiddleware();
