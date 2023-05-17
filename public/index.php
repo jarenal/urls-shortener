@@ -70,8 +70,6 @@ register_shutdown_function($shutdownHandler);
 // Add Routing Middleware
 $app->addRoutingMiddleware();
 
-$app->add(new CustomJsonMiddleware());
-
 // Add Body Parsing Middleware
 $app->addBodyParsingMiddleware();
 
