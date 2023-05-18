@@ -7,7 +7,7 @@ use App\Application\Middleware\CustomJsonMiddleware;
 use App\Application\Middleware\SessionMiddleware;
 use Slim\App;
 
-return function (App $app) {
+return static function (App $app) {
     $app->add(SessionMiddleware::class);
     $app->add(AuthTokenMiddleware::class);
     $app->add(CustomJsonMiddleware::class);
